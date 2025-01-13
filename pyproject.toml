@@ -1,0 +1,33 @@
+[project]
+name = "arrow-flight-polars"
+version = "0.1.0"
+description = "A project to read Parquet data from an Apache Arrow Flight server using Polars."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.2.1",
+    "pandas>=2.2.3",
+    "polars>=1.19.0",
+    "pyarrow>=18.1.0",
+]
+authors = [
+    { name = "WeiNyn", email = "nguyenhuy17798@gmail.com" }
+]
+license = { text = "MIT" }
+keywords = ["arrow", "flight", "polars", "parquet"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries",
+]
+
+[tool.pylint]
+disable = [
+    "C0114",  # Missing module docstring
+    "C0115",  # Missing class docstring
+    "C0116",  # Missing function or method docstring
+    "R0903",  # Too few public methods
+    "W0718",  # Wide exception clause
+]
