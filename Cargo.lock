@@ -329,6 +329,7 @@ dependencies = [
  "arrow",
  "arrow-flight",
  "bytes",
+ "futures",
  "parquet",
  "polars",
  "tempfile",

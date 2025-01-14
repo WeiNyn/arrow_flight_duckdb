@@ -13,7 +13,7 @@ class RandomTableFlightServer(flight.FlightServerBase):
 
     def do_get(self, context, ticket):
         table = self._generate_random_table()
-        batches = table.to_batches(max_chunksize=200_000)  # Chunk size of 200,000 rows
+        batches = table.to_batches(max_chunksize=100)  # Chunk size of 200,000 rows
         return flight.GeneratorStream(table.schema, self._batch_generator(batches))
 
     def _batch_generator(self, batches):

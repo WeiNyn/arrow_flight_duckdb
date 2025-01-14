@@ -111,4 +111,26 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    from pyarrow.flight import FlightClient, Ticket
+    
+    client = FlightClient("grpc://localhost:8815")
+    ticket = Ticket(b"")
+    reader = client.do_get(ticket)
+    a = {'count': 0}
+    def gen_batchs():
+        while True:
+            try:
+                batch = reader.read_chunk()
+                a['count'] += 1
+                yield batch.data
+            except StopIteration:
+                break
+    batch_reader = pa.RecordBatchReader.from_batches(reader.schema, gen_batchs())
+    print(batch_reader)
+    
+
+    import duckdb
+    con = duckdb.connect() 
+    result = con.execute("SELECT * from batch_reader limit 10")
+    print(result.fetch_df())
+    print(a)

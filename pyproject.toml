@@ -5,6 +5,7 @@ description = "A project to read Parquet data from an Apache Arrow Flight server
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "duckdb>=1.1.3",
     "numpy>=2.2.1",
     "pandas>=2.2.3",
     "polars>=1.19.0",
