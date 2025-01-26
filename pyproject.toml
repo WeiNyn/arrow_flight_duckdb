@@ -1,15 +1,17 @@
 [project]
-name = "arrow-flight-polars"
+name = "arrow-flight-duckdb"
 version = "0.1.0"
-description = "A project to read Parquet data from an Apache Arrow Flight server using Polars."
+description = "A project to test Arrow Flight with DuckDB"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "duckdb>=1.1.3",
     "numpy>=2.2.1",
     "pandas>=2.2.3",
+    "pandas-stubs>=2.2.3.241126",
     "polars>=1.19.0",
     "pyarrow>=18.1.0",
+    "pyarrow-stubs>=17.16",
 ]
 authors = [
     { name = "WeiNyn", email = "nguyenhuy17798@gmail.com" }
@@ -31,4 +33,23 @@ disable = [
     "C0116",  # Missing function or method docstring
     "R0903",  # Too few public methods
     "W0718",  # Wide exception clause
+    "W0621",  # Redefining name %r from outer scope
 ]
+
+[dependency-groups]
+dev = [
+    "colorama>=0.4.6",
+    "isort>=5.13.2",
+    "mypy>=1.14.1",
+    "pylint>=3.3.3",
+    "pytest>=8.3.4",
+    "ruff>=0.9.3",
+    "pytest>=8.3.4",
+    "build>=1.2.2.post1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-v --showlocals --capture=no"
