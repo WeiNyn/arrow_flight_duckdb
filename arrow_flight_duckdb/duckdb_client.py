@@ -38,7 +38,7 @@ class DuckdbClient:
         conn (duckdb.DuckDBPyConnection): DuckDB connection object
     """
 
-    def __init__(self, session_name: str | None = None) -> None: 
+    def __init__(self, session_name: str | None = None) -> None:
         self.persist_path = (
             ":memory:" if session_name is None else f"/tmp/{session_name}.duckdb"
         )
