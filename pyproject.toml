@@ -10,8 +10,10 @@ dependencies = [
     "pandas>=2.2.3",
     "pandas-stubs>=2.2.3.241126",
     "polars>=1.19.0",
+    "psutils>=3.3.9",
     "pyarrow>=18.1.0",
     "pyarrow-stubs>=17.16",
+    "requests>=2.32.3",
 ]
 authors = [
     { name = "WeiNyn", email = "nguyenhuy17798@gmail.com" }
@@ -47,7 +49,6 @@ dev = [
     "pytest>=8.3.4",
     "build>=1.2.2.post1",
     "memory-profiler>=0.61.0",
-    "marimo>=0.10.17",
     "plotly>=5.24.1",
 ]
 

@@ -61,7 +61,40 @@ make lint
 
 # Fix code formatting
 make fix
+
+# Run benchmarks
+make benchmark
 ```
+
+## Benchmarks
+
+The project includes benchmarks comparing DuckDB and PyArrow performance for various operations:
+
+- Simple SELECT queries
+- SELECT with LIMIT
+- GROUP BY operations:
+  - COUNT
+  - SUM
+  - AVG
+  - MIN/MAX
+  - Complex aggregations
+Run benchmarks and generate performance metrics:
+
+```bash
+# Run all benchmarks
+make benchmark
+
+# Results will be saved in benchmark_results/ directory
+```
+
+### Benchmark Results
+![select_start](images/select_start.jpg)
+![select_limit](images/select_start_limit.jpg)
+![groupby_sum](images/groupby_sum.jpg)
+![groupby_avg](images/groupby_avg.jpg)
+![groupby_count](images/groupby_count.jpg)
+![groupby_min_max](images/groupby_min_max.jpg)
+![groupby_complex](images/groupby_complex.jpg)
 
 ## License
 
